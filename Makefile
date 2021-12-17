@@ -12,11 +12,11 @@ fclean:
 
 re: fclean all
 
-build nginx:
+nginx:
 	docker-compose -f ./srcs/docker-compose.yml build nginx
 
-build mariadb:
+mariadb:
 	docker-compose -f ./srcs/docker-compose.yml build mariadb
 
-build wordpress:
+wordpress:
 	docker-compose -f ./srcs/docker-compose.yml build wordpress

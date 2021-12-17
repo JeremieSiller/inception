@@ -1,15 +1,21 @@
 FROM debian:buster
 
 RUN apt-get update
-RUN apt-get install -y php7.3 php-mysqli php-fpm mariadb-client
+RUN apt-get install -y php7.3 php-mysqli php-fpm mariadb-client curl
 
 COPY ./www.conf /etc/php/7.3/fpm/pool.d
 
 ADD https://wordpress.org/latest.tar.gz /var/www/latest.tar.gz
 RUN cd /var/www && tar -xvf latest.tar.gz
 
-COPY ./wp-config.php /var/www/wordpress/wp-config.php
+RUN		curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+			--output /usr/bin/wp --silent
+RUN		chmod +x ./usr/bin/wp
+
 RUN mkdir /run/php
-CMD ["php-fpm7.3", "-F"]
+COPY ./config.sh /var/www/wordpress/config.sh
+RUN chmod +X /var/www/wordpress/config.sh
+CMD [ "bash", "/var/www/wordpress/config.sh" ]
+# CMD ["php-fpm7.3", "-F"]
 
 
