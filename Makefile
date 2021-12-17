@@ -20,3 +20,6 @@ mariadb:
 
 wordpress:
 	docker-compose -f ./srcs/docker-compose.yml build wordpress
+
+webpage:
+	docker-compose -f ./srcs/docker-compose.yml build webpage
