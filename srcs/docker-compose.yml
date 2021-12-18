@@ -75,3 +75,14 @@ services:
                 networks:
                       - localhost
                 restart: always
+        adminer:
+                container_name: adminer_debian
+                build: ./bonus/adminer
+                image: adminer
+                networks:
+                      - localhost
+                volumes:
+                      - wordpress:/var/www/wordpress
+                restart: always
+                depends_on:
+                        - wordpress

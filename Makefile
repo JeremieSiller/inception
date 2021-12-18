@@ -23,3 +23,6 @@ wordpress:
 
 webpage:
 	docker-compose -f ./srcs/docker-compose.yml build webpage
+
+adminer:
+	docker-compose -f ./srcs/docker-compose.yml build adminer
