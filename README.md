@@ -33,6 +33,11 @@ make nginx
 ```
 
 ## Description
+**Mandatory part: **
+
+The mandatory part of the subject was about setting up a [LEMP] server. Each service (nginx, wordpress, and mariadb) had to run an own docker container.
+All containers are linked over a docker-network and have different volumes mounted. The structure looks like this:
+<img width="516" alt="inception structure" src="https://user-images.githubusercontent.com/83188617/154948111-0615a5d3-e90c-4dad-ab75-12c0642994f6.png">
 
 ##
 
