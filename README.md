@@ -42,9 +42,11 @@ All containers are linked over a docker-network and have different volumes mount
 **Bonus part:**
 For the bonus part of the subject it was possible to add a few extra services. I added adminer and setup a small webpage (with just one button)
 
-Adminer:
+**Adminer:**
+Adminer is a tool to manage MySQL databases. When the service is running you can access it with adding /adminer to your ip.
 
-
+**Webapage:**
+A small webpage which has a button to switch between dark an light mode. When its running you can type ip/index.html to access it.
 
 ##
 
